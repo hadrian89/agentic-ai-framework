@@ -40,3 +40,5 @@ curl -s -X POST "http://127.0.0.1:8000/sessions/<SESSION_ID>/message" \
   -H "Content-Type: application/json" \
   -d '{"text":"Please pay 100 GBP to John Doe account 12345678 sort 12-34-56"}' | jq
 ```
+
+https://app.diagrams.net/#G1SOJ9rx0i2f8Xx4835xWzrxQIU59pL71J#%7B%22pageId%22%3A%22TBJuUtOty8-q1wqX8igo%22%7D

@@ -214,4 +214,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+venv
 .DS_Store

@@ -1,0 +1,4 @@
+Create a minimal step-by-step plan in strict JSON to get and summarize a bank statement.
+Goal: {goal}
+Context: {context}
+Return only JSON with keys "goal" and "steps" (each step has id, action, params).

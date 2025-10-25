@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Agentic Orchestrator (starter)
+  version: 0.1.0
+paths:
+  /sessions:
+    post:
+      summary: Start a session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: ["agent_id"]
+              properties:
+                agent_id:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /sessions/{session_id}/message:
+    post:
+      summary: Send message to session
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: ["text"]
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: OK

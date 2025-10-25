@@ -1,0 +1,18 @@
+# Core
+python-dotenv>=1.0.1
+PyYAML>=6.0.2
+requests>=2.31.0
+
+# LangChain + LangGraph Ecosystem
+langchain>=0.2.14
+langchain-core>=0.2.22
+langchain-community>=0.2.11
+langgraph>=0.1.1  # ✅ updated and stable
+langsmith>=0.1.38
+
+# Ollama integration
+ollama>=0.1.8
+
+# Optional utilities
+pydantic>=2.6.0
+rich>=13.7.1

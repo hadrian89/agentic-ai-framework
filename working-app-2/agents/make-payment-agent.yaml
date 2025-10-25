@@ -1,0 +1,15 @@
+id: payments-agent
+name: Payments Agent
+version: "0.1.0"
+description: "Agent for making bank payments via the payments tool"
+llm: phi4-mini
+prompt_template: ./orchestrator/prompt_templates/payments_prompt.txt
+tools:
+  - create_payment
+policies:
+  - policy_file: ./orchestrator/policies/policies.json
+goals:
+  - goal: "amount <= 20000 AND payee_location=='UK' AND payee_type=='new' AND channel=='mobile_app'"
+    result: "abhi-payment-info/make-everyday-to-someone-new-under-20k-uk-mobile-app"
+  - goal: "amount <= 20000 AND payee_location=='UK' AND payee_type=='new' AND channel=='online_banking'"
+    result: "abhi-payment-info/make-everyday-to-someone-new-under-20k-uk-online-banking"

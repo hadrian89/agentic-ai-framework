@@ -1,0 +1,13 @@
+id: statement-agent
+name: Statement Agent
+version: "0.1.0"
+description: "Agent to fetch bank account statements"
+llm: phi4-mini
+prompt_template: ./orchestrator/prompt_templates/statement_prompt.txt
+tools:
+  - get_statement
+policies:
+  - policy_file: ./orchestrator/policies/policies.json
+goals:
+  - goal: "account_number IS NOT NULL AND date_range IS NOT NULL"
+    result: "abhi-statement-info/retrieve-statement"

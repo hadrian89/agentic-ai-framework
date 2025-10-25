@@ -1,0 +1,10 @@
+id: payments-agent
+name: Payments Agent
+version: "0.1.0"
+description: "Agent for making bank payments via the payments tool"
+llm: mock
+prompt_template: ../orchestrator/prompt_templates/payments_prompt.txt
+tools:
+  - create_payment
+policies:
+  - policy_file: ../policy/policies.json

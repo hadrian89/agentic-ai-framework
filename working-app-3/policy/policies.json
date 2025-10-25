@@ -1,0 +1,8 @@
+{
+  "payments": {
+    "max_without_2fa": 100.0
+  },
+  "allowed_tools_by_role": {
+    "agent": ["create_payment"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "rules": [
+    {
+      "tool": "make_payment",
+      "max_amount": 1000,
+      "requires_approval": true,
+      "allowed_currencies": ["GBP", "USD", "EUR"]
+    },
+    {
+      "tool": "get_statement",
+      "max_months": 6
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+id: statement-agent
+name: Statement Agent
+version: "0.1.0"
+description: "Agent to fetch and summarize account statements"
+llm: mock
+prompt_template: ../orchestrator/prompt_templates/statements_prompt.txt
+tools:
+  - get_statement
+policies:
+  - ../policy/policies.json
+goals:
+  - "Get my bank statement"

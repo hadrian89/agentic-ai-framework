@@ -1,0 +1,12 @@
+id: payments-agent
+name: Payments Agent
+version: "0.1.0"
+description: "Agent for making bank payments via the payments tool"
+llm: ollama
+prompt_template: orchestrator/prompt_templates/payments_prompt.txt
+tools:
+  - create_payment
+policies:
+  - policy_file: orchestrator/policies/policies.json
+goals:
+  - "Make a payment to a new payee"

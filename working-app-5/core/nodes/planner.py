@@ -1,6 +1,6 @@
-from llm.ollama_client import OllamaLLM
+from llm.provider import get_llm
+llm = get_llm()
 
-llm = OllamaLLM()
 
 def planner_node(state):
     prompt = f"""

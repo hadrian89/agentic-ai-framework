@@ -107,3 +107,13 @@ agentic-ai-framework/
 ├── main.py
 ├── requirements.txt
 └── README.md
+
+
+uvicorn api.main:app --reload
+
+curl -X POST "http://localhost:8000/agent/account_assistant/chat" \
+-H "Content-Type: application/json" \
+-d '{
+  "session_id": "abc123",
+  "message": "what is my balance?"
+}'

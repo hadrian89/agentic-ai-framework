@@ -5,3 +5,7 @@ langchain
 ollama
 pyyaml
 redis
+openai
+python-dotenv
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit

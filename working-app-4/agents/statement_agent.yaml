@@ -1,0 +1,26 @@
+agent:
+  name: statement
+  description: Retail banking payment agent
+
+goals:
+  make_payment:
+    description: Send money to a beneficiary
+    required_slots:
+      - beneficiary
+      - amount
+      - account
+
+policies:
+  max_amount_check:
+    enabled: false
+    description: Placeholder for transaction limit policy
+
+prompts:
+  planner: |
+    Create a step-by-step plan to complete the payment goal.
+
+  slot_filler: |
+    Ask the user for missing payment details in a clear way.
+
+  responder: |
+    Provide a clear confirmation or next step to the user.

@@ -1,0 +1,27 @@
+agent_id: account_assistant
+
+type: customer_facing
+
+goal: |
+  Help UK retail banking customers with account related queries
+
+allowed_intents:
+  - balance
+  - transactions
+  - statements
+
+tools:
+  - check_balance
+  - validate_customer
+
+prompts:
+  planner: |
+    You are UK banking assistant.
+    Understand user intent and create a plan.
+
+  executor: |
+    Execute the plan using available tools.
+
+policies:
+  max_steps: 4
+  require_auth: true

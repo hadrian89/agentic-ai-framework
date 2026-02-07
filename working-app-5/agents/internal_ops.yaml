@@ -1,0 +1,6 @@
+agent_id: credit_card
+
+tools:
+  - card_eligibility
+  - card_apply
+  - card_block

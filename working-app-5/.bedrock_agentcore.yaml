@@ -1,0 +1,68 @@
+default_agent: agentframework
+agents:
+  agentframework:
+    name: agentframework
+    language: python
+    node_version: '20'
+    entrypoint: /Users/abhinavsrivastav/Documents/natwest/agentic_framework/working-app-5/api/agentcore.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: /Users/abhinavsrivastav/Documents/natwest/agentic_framework/working-app-5
+    aws:
+      execution_role: arn:aws:iam::929926685491:user/abhinav
+      execution_role_auto_create: true
+      account: '929926685491'
+      region: eu-west-2
+      ecr_repository: 929926685491.dkr.ecr.eu-west-2.amazonaws.com/agent-framework
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-agentframework-builder
+      execution_role: arn:aws:iam::929926685491:role/AmazonBedrockAgentCoreSDKCodeBuild-eu-west-2-ddbd5314d2
+      source_bucket: bedrock-agentcore-codebuild-sources-929926685491-eu-west-2
+    memory:
+      mode: STM_AND_LTM
+      memory_id: agentframework_mem-WhOA184SkZ
+      memory_arn: arn:aws:bedrock-agentcore:eu-west-2:929926685491:memory/agentframework_mem-WhOA184SkZ
+      memory_name: agentframework_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: true
+      was_created_by_toolkit: true
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration:
+      customJWTAuthorizer:
+        discoveryUrl: https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_zyJzgCzVn/.well-known/openid-configuration
+        allowedClients:
+        - 2fbni1d5us042k0kepsg3js2r4
+        allowedScopes:
+        - phone,openid,email
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false

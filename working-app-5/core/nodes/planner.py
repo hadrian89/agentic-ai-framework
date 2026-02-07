@@ -4,7 +4,7 @@ llm = get_llm()
 
 def planner_node(state):
     prompt = f"""
-    User Query: {state['input']}
+    User Query: {state['messages']}
     Goal: {state['config']['goal']}
     Create simple plan.
     """

@@ -2,8 +2,13 @@ from tools.registry import get_tool
 
 def executor_node(state):
 
-    user_input = state["input"].lower()
-    tools = state["config"]["tools"]
+    messages = state["messages"]
+    last_message = messages[-1]
+    user_input = last_message.content.lower()
+    
+    # Safe access to tools
+    config = state.get("config", {})
+    tools = config.get("tools", []) # Defaults to empty list if missing
 
     results = []
 

@@ -7,7 +7,7 @@ from core.nodes.responder import responder_node
 from typing import TypedDict
 
 class AgentState(TypedDict):
-    input: str
+    messages: str
     config: dict
     history: list
     plan: str

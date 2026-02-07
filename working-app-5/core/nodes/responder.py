@@ -8,7 +8,7 @@ def responder_node(state):
     You are a UK retail banking assistant.
 
     USER QUESTION:
-    {state['input']}
+    {state['messages']}
 
     TOOL RESULTS (REAL DATA):
     {state.get('tool_results')}

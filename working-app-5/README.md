@@ -117,3 +117,5 @@ curl -X POST "http://localhost:8000/agent/account_assistant/chat" \
   "session_id": "abc123",
   "message": "what is my balance?"
 }'
+
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 929926685491.dkr.ecr.eu-west-2.amazonaws.com

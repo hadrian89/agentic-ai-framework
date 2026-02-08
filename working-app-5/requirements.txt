@@ -7,5 +7,6 @@ pyyaml
 redis
 openai
 python-dotenv
+huggingface_hub
 bedrock-agentcore
 bedrock-agentcore-starter-toolkit

@@ -1,6 +1,6 @@
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 from core.graph_engine import build_graph
-from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
+from langchain_core.messages import HumanMessage
 
 app = BedrockAgentCoreApp()
 graph = build_graph() # Memory management handled below

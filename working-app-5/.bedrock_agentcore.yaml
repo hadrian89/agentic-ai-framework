@@ -1,4 +1,4 @@
-default_agent: agentframework
+default_agent: agentaiframework
 agents:
   agentframework:
     name: agentframework
@@ -11,7 +11,7 @@ agents:
     container_runtime: docker
     source_path: /Users/abhinavsrivastav/Documents/natwest/agentic_framework/working-app-5
     aws:
-      execution_role: arn:aws:iam::929926685491:user/abhinav
+      execution_role: arn:aws:iam::929926685491:role/service-role/AmazonBedrockAgentCoreRuntimeDefaultServiceRole-85k4n
       execution_role_auto_create: true
       account: '929926685491'
       region: eu-west-2
@@ -35,7 +35,7 @@ agents:
       agent_session_id: null
     codebuild:
       project_name: bedrock-agentcore-agentframework-builder
-      execution_role: arn:aws:iam::929926685491:role/AmazonBedrockAgentCoreSDKCodeBuild-eu-west-2-ddbd5314d2
+      execution_role: arn:aws:iam::929926685491:role/service-role/AmazonBedrockAgentCoreRuntimeDefaultServiceRole-85k4n
       source_bucket: bedrock-agentcore-codebuild-sources-929926685491-eu-west-2
     memory:
       mode: STM_AND_LTM
@@ -61,6 +61,66 @@ agents:
         - 2fbni1d5us042k0kepsg3js2r4
         allowedScopes:
         - phone,openid,email
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  agentaiframework:
+    name: agentaiframework
+    language: python
+    node_version: '20'
+    entrypoint: /Users/abhinavsrivastav/Documents/natwest/agentic_framework/working-app-5/api/agentcore.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: /Users/abhinavsrivastav/Documents/natwest/agentic_framework/working-app-5
+    aws:
+      execution_role: arn:aws:iam::929926685491:role/BedrockAgentCoreExecutionRole
+      execution_role_auto_create: true
+      account: '929926685491'
+      region: eu-west-2
+      ecr_repository: 929926685491.dkr.ecr.eu-west-2.amazonaws.com/agent-framework
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: agentaiframework-z2bkpB65t0
+      agent_arn: arn:aws:bedrock-agentcore:eu-west-2:929926685491:runtime/agentaiframework-z2bkpB65t0
+      agent_session_id: 79941ef5-48e2-4b01-b022-086d99b0a55b
+    codebuild:
+      project_name: bedrock-agentcore-agentaiframework-builder
+      execution_role: arn:aws:iam::929926685491:role/AmazonBedrockAgentCoreSDKCodeBuild-eu-west-2-4441ec1b39
+      source_bucket: bedrock-agentcore-codebuild-sources-929926685491-eu-west-2
+    memory:
+      mode: STM_AND_LTM
+      memory_id: agentframework_mem-WhOA184SkZ
+      memory_arn: null
+      memory_name: agentaiframework_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
     request_header_configuration: null
     oauth_configuration: null
     api_key_env_var_name: null

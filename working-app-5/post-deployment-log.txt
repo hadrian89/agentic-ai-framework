@@ -1,0 +1,52 @@
+╭────────────────────────────────────────── Deployment Success ───────────────────────────────────────────╮
+│ Agent Details:                                                                                          │
+│ Agent Name: agentaiframework                                                                            │
+│ Agent ARN: arn:aws:bedrock-agentcore:eu-west-2:929926685491:runtime/agentaiframework-z2bkpB65t0         │
+│ ECR URI: 929926685491.dkr.ecr.eu-west-2.amazonaws.com/agent-framework:20260208-150007-106               │
+│ CodeBuild ID: bedrock-agentcore-agentaiframework-builder:2f91ea06-6e69-4319-b0b4-1e2c91769a72           │
+│                                                                                                         │
+│ 🚀 ARM64 container deployed to Bedrock AgentCore                                                        │
+│                                                                                                         │
+│ Next Steps:                                                                                             │
+│    agentcore status                                                                                     │
+│    agentcore invoke '{"prompt": "Hello"}'                                                               │
+│                                                                                                         │
+│ 📋 CloudWatch Logs:                                                                                     │
+│    /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65t0-DEFAULT --log-stream-name-prefix         │
+│ "2026/02/08/[runtime-logs]"                                                                             │
+│    /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65t0-DEFAULT --log-stream-names               │
+│ "otel-rt-logs"                                                                                          │
+│                                                                                                         │
+│ 🔍 GenAI Observability Dashboard:                                                                       │
+│    https://console.aws.amazon.com/cloudwatch/home?region=eu-west-2#gen-ai-observability/agent-core      │
+│                                                                                                         │
+│ Note: Observability data may take up to 10 minutes to appear after first launch                         │
+│                                                                                                         │
+│ 💡 Tail logs with:                                                                                      │
+│    aws logs tail /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65t0-DEFAULT                    │
+│ --log-stream-name-prefix "2026/02/08/[runtime-logs]" --follow                                           │
+│    aws logs tail /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65t0-DEFAULT                    │
+│ --log-stream-name-prefix "2026/02/08/[runtime-logs]" --since 1h                                         │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+(.venv) (base) abhinavsrivastav@MacBookAir working-app-5 % agentcore invoke '{"prompt": "Hello"}'
+╭──────────────────── agentaiframework ─────────────────────╮
+│ Session: 79941ef5-48e2-4b01-b022-086d99b0a55b             │
+│ Request ID: c0965d10-f5a0-4330-98e7-ce9c757ac71b          │
+│ ARN:                                                      │
+│ arn:aws:bedrock-agentcore:eu-west-2:929926685491:runtime/ │
+│ agentaiframework-z2bkpB65t0                               │
+│ Logs: aws logs tail                                       │
+│ /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65 │
+│ t0-DEFAULT --log-stream-name-prefix                       │
+│ "2026/02/08/[runtime-logs]" --follow                      │
+│       aws logs tail                                       │
+│ /aws/bedrock-agentcore/runtimes/agentaiframework-z2bkpB65 │
+│ t0-DEFAULT --log-stream-name-prefix                       │
+│ "2026/02/08/[runtime-logs]" --since 1h                    │
+│ GenAI Dashboard:                                          │
+│ https://console.aws.amazon.com/cloudwatch/home?region=eu- │
+│ west-2#gen-ai-observability/agent-core                    │
+╰───────────────────────────────────────────────────────────╯
+
+Response:
+Hello! How can I assist you today with your banking needs?
